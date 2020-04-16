@@ -48,6 +48,7 @@ Public Class Form1
         ComboBoxBitsDados.SelectedIndex = 3
         ComboBoxParidade.SelectedIndex = 0
         ComboBoxBitsParada.SelectedIndex = 0
+        Me.Text = " - Comunicação com a Porta Serial."
     End Sub
 
     Delegate Sub meumetodo(ByVal [text] As String)
@@ -175,7 +176,4 @@ Public Class Form1
                         "gluisf@gmail.com", "GComSerial v1.0 Freeware")
     End Sub
 
-    Private Sub ButtonEnviar_MouseHover(sender As Object, e As EventArgs) Handles ButtonEnviar.MouseHover
-        ToolTip1.Show("Clique para enviar mensagem", ButtonEnviar)
-    End Sub
 End Class

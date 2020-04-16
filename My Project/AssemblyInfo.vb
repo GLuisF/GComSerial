@@ -1,4 +1,6 @@
-﻿Imports System
+﻿Imports System.Resources
+
+Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -8,14 +10,14 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("GluisfCOMSerial")> 
+<Assembly: AssemblyTitle("GComSerial - Comunicação com a Porta Serial")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("GluisfCOMSerial")> 
-<Assembly: AssemblyCopyright("Copyright ©  2020")> 
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyCompany("GLuisFCOM")> 
+<Assembly: AssemblyProduct("GComSerial - Comunicação com a Porta Serial")> 
+<Assembly: AssemblyCopyright("Copyright © 2020 GLuisFCOM")> 
+<Assembly: AssemblyTrademark("GLuisFCOM")> 
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(False)> 
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
 <Assembly: Guid("18a2a459-0c94-4c3a-8292-6a8297f6d92b")> 
@@ -33,3 +35,5 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyVersion("1.0.0.0")> 
 <Assembly: AssemblyFileVersion("1.0.0.0")> 
+
+<Assembly: NeutralResourcesLanguageAttribute("pt-BR")> 

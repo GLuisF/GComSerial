@@ -1,0 +1,15 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                             *
+*                GLuisFCOM GComSerial v1.0.0                  *
+*                                                             *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Você instalou o GComSerial, um programa que envia e recebe
+dados da porta serial desenvolvido no Visual Studio 2013 usando
+a linguagem Visual Basic .Net.
+
+O GComSerial foi baseado no RComSerial criado por ROGERCOM em
+2007 em linguagem C++.
+
+Apesar de fazer a mesma coisa o tamanho do programa ficou 12X
+menor: Com GComSerial.exe (62KB) e RComSerial.exe (750KB).

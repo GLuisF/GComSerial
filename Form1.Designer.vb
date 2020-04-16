@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TextBoxRX = New System.Windows.Forms.TextBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.StatusConexao = New System.Windows.Forms.ToolStripStatusLabel()
@@ -65,9 +66,11 @@ Partial Class Form1
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ImageLogo = New System.Windows.Forms.PictureBox()
         Me.StatusStrip1.SuspendLayout()
         Me.PanelConfiguracoes.SuspendLayout()
         Me.PanelControle.SuspendLayout()
+        CType(Me.ImageLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TextBoxRX
@@ -103,7 +106,7 @@ Partial Class Form1
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.StatusConexao.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken
         Me.StatusConexao.Name = "StatusConexao"
-        Me.StatusConexao.Size = New System.Drawing.Size(82, 19)
+        Me.StatusConexao.Size = New System.Drawing.Size(100, 19)
         Me.StatusConexao.Text = "Desconectado"
         Me.StatusConexao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -115,7 +118,7 @@ Partial Class Form1
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.StatusPorta.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken
         Me.StatusPorta.Name = "StatusPorta"
-        Me.StatusPorta.Size = New System.Drawing.Size(42, 19)
+        Me.StatusPorta.Size = New System.Drawing.Size(50, 19)
         '
         'StatusVelocidade
         '
@@ -125,7 +128,7 @@ Partial Class Form1
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.StatusVelocidade.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken
         Me.StatusVelocidade.Name = "StatusVelocidade"
-        Me.StatusVelocidade.Size = New System.Drawing.Size(43, 19)
+        Me.StatusVelocidade.Size = New System.Drawing.Size(47, 19)
         '
         'StatusBitsDados
         '
@@ -135,7 +138,7 @@ Partial Class Form1
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.StatusBitsDados.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken
         Me.StatusBitsDados.Name = "StatusBitsDados"
-        Me.StatusBitsDados.Size = New System.Drawing.Size(20, 19)
+        Me.StatusBitsDados.Size = New System.Drawing.Size(17, 19)
         '
         'StatusParidade
         '
@@ -145,7 +148,7 @@ Partial Class Form1
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.StatusParidade.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken
         Me.StatusParidade.Name = "StatusParidade"
-        Me.StatusParidade.Size = New System.Drawing.Size(52, 19)
+        Me.StatusParidade.Size = New System.Drawing.Size(58, 19)
         '
         'StatusBitsParada
         '
@@ -155,17 +158,17 @@ Partial Class Form1
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.StatusBitsParada.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken
         Me.StatusBitsParada.Name = "StatusBitsParada"
-        Me.StatusBitsParada.Size = New System.Drawing.Size(22, 19)
+        Me.StatusBitsParada.Size = New System.Drawing.Size(26, 19)
         '
         'StatusNomePrograma
         '
+        Me.StatusNomePrograma.AutoSize = False
         Me.StatusNomePrograma.BorderSides = CType((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.StatusNomePrograma.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken
         Me.StatusNomePrograma.Name = "StatusNomePrograma"
-        Me.StatusNomePrograma.Size = New System.Drawing.Size(194, 19)
-        Me.StatusNomePrograma.Spring = True
+        Me.StatusNomePrograma.Size = New System.Drawing.Size(170, 19)
         Me.StatusNomePrograma.Text = "GComSerial v1.0"
         '
         'LabelRX
@@ -215,6 +218,7 @@ Partial Class Form1
         Me.ComboBoxBitsParada.Size = New System.Drawing.Size(83, 21)
         Me.ComboBoxBitsParada.TabIndex = 16
         Me.ComboBoxBitsParada.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.ComboBoxBitsParada, "Seleciona o bit de parada")
         '
         'ComboBoxPorta
         '
@@ -228,6 +232,7 @@ Partial Class Form1
         Me.ComboBoxPorta.Size = New System.Drawing.Size(83, 21)
         Me.ComboBoxPorta.TabIndex = 0
         Me.ComboBoxPorta.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.ComboBoxPorta, "Seleciona a Porta de comunicação.")
         '
         'Label7
         '
@@ -266,6 +271,7 @@ Partial Class Form1
         Me.ComboBoxParidade.Size = New System.Drawing.Size(83, 21)
         Me.ComboBoxParidade.TabIndex = 14
         Me.ComboBoxParidade.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.ComboBoxParidade, "Seleciona a paridade")
         '
         'ComboBoxVelocidade
         '
@@ -278,6 +284,7 @@ Partial Class Form1
         Me.ComboBoxVelocidade.Size = New System.Drawing.Size(83, 21)
         Me.ComboBoxVelocidade.TabIndex = 11
         Me.ComboBoxVelocidade.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.ComboBoxVelocidade, "Seleciona a velocidade em bps.")
         '
         'Label5
         '
@@ -307,6 +314,7 @@ Partial Class Form1
         Me.ComboBoxBitsDados.Size = New System.Drawing.Size(83, 21)
         Me.ComboBoxBitsDados.TabIndex = 12
         Me.ComboBoxBitsDados.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.ComboBoxBitsDados, "Seleciona bits de dados.")
         '
         'ButtonAbrirPorta
         '
@@ -317,6 +325,7 @@ Partial Class Form1
         Me.ButtonAbrirPorta.TabIndex = 17
         Me.ButtonAbrirPorta.TabStop = False
         Me.ButtonAbrirPorta.Text = "Abrir Porta"
+        Me.ToolTip1.SetToolTip(Me.ButtonAbrirPorta, "Abre a Porta selecionada.")
         Me.ButtonAbrirPorta.UseVisualStyleBackColor = True
         '
         'ButtonFecharPorta
@@ -329,6 +338,7 @@ Partial Class Form1
         Me.ButtonFecharPorta.TabIndex = 18
         Me.ButtonFecharPorta.TabStop = False
         Me.ButtonFecharPorta.Text = "Fechar Porta"
+        Me.ToolTip1.SetToolTip(Me.ButtonFecharPorta, "Fecha a Porta selecionada.")
         Me.ButtonFecharPorta.UseVisualStyleBackColor = True
         '
         'ButtonSobre
@@ -340,6 +350,7 @@ Partial Class Form1
         Me.ButtonSobre.TabIndex = 19
         Me.ButtonSobre.TabStop = False
         Me.ButtonSobre.Text = "Sobre"
+        Me.ToolTip1.SetToolTip(Me.ButtonSobre, "Sobre o GComSerial.")
         Me.ButtonSobre.UseVisualStyleBackColor = True
         '
         'Label8
@@ -360,6 +371,7 @@ Partial Class Form1
         Me.ButtonSair.TabIndex = 20
         Me.ButtonSair.TabStop = False
         Me.ButtonSair.Text = "Sair"
+        Me.ToolTip1.SetToolTip(Me.ButtonSair, "Fecha o programa.")
         Me.ButtonSair.UseVisualStyleBackColor = True
         '
         'PanelControle
@@ -384,6 +396,7 @@ Partial Class Form1
         Me.ButtonEnviar.TabIndex = 21
         Me.ButtonEnviar.TabStop = False
         Me.ButtonEnviar.Text = "Enviar"
+        Me.ToolTip1.SetToolTip(Me.ButtonEnviar, "Envia os dados digitados.")
         Me.ButtonEnviar.UseVisualStyleBackColor = True
         '
         'CheckBoxIncluirCRLF
@@ -397,6 +410,7 @@ Partial Class Form1
         Me.CheckBoxIncluirCRLF.TabIndex = 22
         Me.CheckBoxIncluirCRLF.TabStop = False
         Me.CheckBoxIncluirCRLF.Text = "Incluir CR/LF no fim da mensagem"
+        Me.ToolTip1.SetToolTip(Me.CheckBoxIncluirCRLF, "Acrescenta os caracteres CR e LF no fim da mensagem.")
         Me.CheckBoxIncluirCRLF.UseVisualStyleBackColor = True
         '
         'CheckBoxEnviarAuto
@@ -408,6 +422,7 @@ Partial Class Form1
         Me.CheckBoxEnviarAuto.TabIndex = 23
         Me.CheckBoxEnviarAuto.TabStop = False
         Me.CheckBoxEnviarAuto.Text = "Enviar caracter automaticamente"
+        Me.ToolTip1.SetToolTip(Me.CheckBoxEnviarAuto, "Ao digitar os caracteres serão enviados direto para a Porta.")
         Me.CheckBoxEnviarAuto.UseVisualStyleBackColor = True
         '
         'TextBoxTX
@@ -428,7 +443,7 @@ Partial Class Form1
         Me.LabelNomePrograma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.LabelNomePrograma.Font = New System.Drawing.Font("Arial", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelNomePrograma.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.LabelNomePrograma.Location = New System.Drawing.Point(23, 18)
+        Me.LabelNomePrograma.Location = New System.Drawing.Point(60, 17)
         Me.LabelNomePrograma.Name = "LabelNomePrograma"
         Me.LabelNomePrograma.Size = New System.Drawing.Size(181, 34)
         Me.LabelNomePrograma.TabIndex = 25
@@ -446,6 +461,7 @@ Partial Class Form1
         Me.ButtonSalvarRX.TabStop = False
         Me.ButtonSalvarRX.Text = "Salvar"
         Me.ButtonSalvarRX.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.ButtonSalvarRX, "Salva os dados recebidos em arquivo.")
         Me.ButtonSalvarRX.UseVisualStyleBackColor = True
         '
         'ButtonLimparRX
@@ -460,6 +476,7 @@ Partial Class Form1
         Me.ButtonLimparRX.TabStop = False
         Me.ButtonLimparRX.Text = "Limpar RX"
         Me.ButtonLimparRX.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.ButtonLimparRX, "Limpa os dados recebidos.")
         Me.ButtonLimparRX.UseVisualStyleBackColor = True
         '
         'ButtonLimparTX
@@ -474,6 +491,7 @@ Partial Class Form1
         Me.ButtonLimparTX.TabStop = False
         Me.ButtonLimparTX.Text = "Limpar TX"
         Me.ButtonLimparTX.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.ButtonLimparTX, "Limpa os dados digitados.")
         Me.ButtonLimparTX.UseVisualStyleBackColor = True
         '
         'ButtonSalvarTX
@@ -488,6 +506,7 @@ Partial Class Form1
         Me.ButtonSalvarTX.TabStop = False
         Me.ButtonSalvarTX.Text = "Salvar"
         Me.ButtonSalvarTX.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.ButtonSalvarTX, "Salva os dados digitados em arquivo.")
         Me.ButtonSalvarTX.UseVisualStyleBackColor = True
         '
         'ButtonX
@@ -523,12 +542,23 @@ Partial Class Form1
         'SerialPort1
         '
         '
+        'ImageLogo
+        '
+        Me.ImageLogo.Image = Global.GComSerial.My.Resources.Resources.GComSerial
+        Me.ImageLogo.Location = New System.Drawing.Point(15, 8)
+        Me.ImageLogo.Name = "ImageLogo"
+        Me.ImageLogo.Size = New System.Drawing.Size(48, 48)
+        Me.ImageLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ImageLogo.TabIndex = 31
+        Me.ImageLogo.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(470, 464)
+        Me.Controls.Add(Me.ImageLogo)
         Me.Controls.Add(Me.ButtonMinimizar)
         Me.Controls.Add(Me.ButtonX)
         Me.Controls.Add(Me.ButtonLimparTX)
@@ -548,6 +578,7 @@ Partial Class Form1
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TextBoxRX)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "GComSerial"
@@ -556,6 +587,7 @@ Partial Class Form1
         Me.PanelConfiguracoes.ResumeLayout(False)
         Me.PanelConfiguracoes.PerformLayout()
         Me.PanelControle.ResumeLayout(False)
+        CType(Me.ImageLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -602,5 +634,6 @@ Partial Class Form1
     Friend WithEvents SerialPort1 As System.IO.Ports.SerialPort
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents ImageLogo As System.Windows.Forms.PictureBox
 
 End Class
