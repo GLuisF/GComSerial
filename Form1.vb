@@ -95,7 +95,7 @@ Public Class Form1
             StatusBitsDados.Text = ComboBoxBitsDados.SelectedItem
             StatusParidade.Text = ComboBoxParidade.SelectedItem
             StatusBitsParada.Text = ComboBoxBitsParada.SelectedItem
-            TextBoxTX.Select()
+            TextBoxTX.Focus()
 
         Else
             MessageBox.Show("Um outro programa já está usando a Porta," + vbLf + "ou a mesma não existe !", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -124,7 +124,9 @@ Public Class Form1
     End Sub
 
     Private Sub ButtonEnviar_Click(sender As Object, e As EventArgs) Handles ButtonEnviar.Click
+        'TextBoxTX.Focus()
         SerialPort1.Write(TextBoxTX.Text)
+        If CheckBoxIncluirCRLF.Checked Then SerialPort1.Write(vbCrLf)
         TextBoxTX.Text = ""
     End Sub
 
@@ -176,4 +178,15 @@ Public Class Form1
                         "gluisf@gmail.com", "GComSerial v1.0 Freeware")
     End Sub
 
+    Private Sub TextBoxTX_LostFocus(sender As Object, e As EventArgs) Handles TextBoxTX.LostFocus
+        If TextBoxTX.Enabled Then TextBoxTX.Focus()
+    End Sub
+
+    Private Sub TextBoxRX_MouseDown(sender As Object, e As MouseEventArgs) Handles TextBoxRX.MouseDown
+        If TextBoxTX.Enabled Then TextBoxRX.Cursor = Cursors.No
+    End Sub
+
+    Private Sub TextBoxRX_MouseUp(sender As Object, e As MouseEventArgs) Handles TextBoxRX.MouseUp
+        TextBoxRX.Cursor = Cursors.Arrow
+    End Sub
 End Class
