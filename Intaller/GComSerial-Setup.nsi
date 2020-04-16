@@ -63,7 +63,7 @@ var ICONS_GROUP
 ; MUI end ------
 
 Name "${PRODUCT_NAME} v${PRODUCT_VERSION}"
-OutFile "${PRODUCT_EXE}-Setup.exe"
+OutFile "${PRODUCT_EXE}-v${PRODUCT_VERSION}-Setup.exe"
 InstallDir "$PROGRAMFILES\${PRODUCT_PUBLISHER}\"
 InstallDirRegKey ${PRODUCT_ROOT_KEY} "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
