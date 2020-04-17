@@ -62,11 +62,14 @@ var ICONS_GROUP
 !insertmacro MUI_LANGUAGE "PortugueseBR"
 !insertmacro MUI_LANGUAGE "Spanish"
 
+; Reserve files
+;!insertmacro MUI_RESERVEFILE_INSTALLOPTIONS
+
 ; MUI end ------
 
 Name "${PRODUCT_NAME} v${PRODUCT_VERSION}"
 OutFile "${PRODUCT_EXE}-v${PRODUCT_VERSION}-Setup.exe"
-InstallDir "$PROGRAMFILES\${PRODUCT_PUBLISHER}\"
+InstallDir "$PROGRAMFILES\${PRODUCT_PUBLISHER}"
 InstallDirRegKey ${PRODUCT_ROOT_KEY} "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
 ShowUnInstDetails show
@@ -77,7 +80,7 @@ FunctionEnd
 
 Section "${PRODUCT_EXE}.exe" SEC01
   SetOutPath "$INSTDIR"
-  SetOverwrite ifnewer
+  SetOverwrite on                 ;ifnewer
   File "${PRODUCT_EXE}.exe"
   File "LEIA-ME.txt"
 
