@@ -169,7 +169,7 @@ Partial Class Form1
         Me.StatusNomePrograma.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken
         Me.StatusNomePrograma.Name = "StatusNomePrograma"
         Me.StatusNomePrograma.Size = New System.Drawing.Size(170, 19)
-        Me.StatusNomePrograma.Text = "GComSerial v1.0"
+        Me.StatusNomePrograma.Text = "GComSerial v1.1"
         '
         'LabelRX
         '

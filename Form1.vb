@@ -60,7 +60,7 @@ Public Class Form1
         End If
     End Sub
     Sub TratamentoSTR(ByVal meustring As String)
-        TextBoxRX.Text &= meustring
+        TextBoxRX.AppendText(meustring)
     End Sub
 
     Private Sub ButtonX_Click(sender As Object, e As EventArgs) Handles ButtonX.Click
@@ -175,7 +175,7 @@ Public Class Form1
                         "Copyright(c) 2020, GLUISFCOM" & vbLf & _
                         "By Giovani Luis Franco" & vbLf & _
                         "www.github.com/GLuisF" & vbLf & _
-                        "gluisf@gmail.com", "GComSerial v1.0 Freeware")
+                        "gluisf@gmail.com", "GComSerial v1.1 Freeware")
     End Sub
 
     Private Sub TextBoxTX_LostFocus(sender As Object, e As EventArgs) Handles TextBoxTX.LostFocus
