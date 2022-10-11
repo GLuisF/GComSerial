@@ -60,7 +60,11 @@ Public Class Form1
         End If
     End Sub
     Sub TratamentoSTR(ByVal meustring As String)
-        TextBoxRX.AppendText(meustring)
+        If meustring.Contains(vbCr) Then
+            TextBoxRX.AppendText(Replace(meustring, vbCr, vbCrLf))
+        Else
+            TextBoxRX.AppendText(meustring)
+        End If
     End Sub
 
     Private Sub ButtonX_Click(sender As Object, e As EventArgs) Handles ButtonX.Click
@@ -128,6 +132,7 @@ Public Class Form1
         SerialPort1.Write(TextBoxTX.Text)
         If CheckBoxIncluirCRLF.Checked Then SerialPort1.Write(vbCrLf)
         TextBoxTX.Text = ""
+        TextBoxTX.Focus()
     End Sub
 
     Private Sub CheckBoxEnviarAuto_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxEnviarAuto.CheckedChanged
@@ -171,22 +176,11 @@ Public Class Form1
     End Sub
 
     Private Sub ButtonSobre_Click(sender As Object, e As EventArgs) Handles ButtonSobre.Click
-        MessageBox.Show("Comunicação com a Porta Serial para Windows Vista/7/8/8.1 e 10" & vbLf & _
-                        "Copyright(c) 2020, GLUISFCOM" & vbLf & _
-                        "By Giovani Luis Franco" & vbLf & _
-                        "www.github.com/GLuisF" & vbLf & _
-                        "gluisf@gmail.com", "GComSerial v1.1 Freeware")
+        MessageBox.Show("Comunicação com a Porta Serial para Windows Vista/7/8/8.1/10 e 11" & vbCrLf & _
+                        "Copyright(c) 2022, GLUISFCOM" & vbCrLf & _
+                        "By Giovani Luis Franco" & vbCrLf & _
+                        "www.github.com/GLuisF" & vbCrLf & _
+                        "gluisf@gmail.com", "GComSerial v1.2 Freeware")
     End Sub
 
-    Private Sub TextBoxTX_LostFocus(sender As Object, e As EventArgs) Handles TextBoxTX.LostFocus
-        If TextBoxTX.Enabled Then TextBoxTX.Focus()
-    End Sub
-
-    Private Sub TextBoxRX_MouseDown(sender As Object, e As MouseEventArgs) Handles TextBoxRX.MouseDown
-        If TextBoxTX.Enabled Then TextBoxRX.Cursor = Cursors.No
-    End Sub
-
-    Private Sub TextBoxRX_MouseUp(sender As Object, e As MouseEventArgs) Handles TextBoxRX.MouseUp
-        TextBoxRX.Cursor = Cursors.Arrow
-    End Sub
 End Class

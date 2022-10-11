@@ -4,7 +4,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "${PRODUCT_EXE}"     ;${PRODUCT_NAME} 
-!define PRODUCT_VERSION "1.1"
+!define PRODUCT_VERSION "1.2"
 !define PRODUCT_PUBLISHER "GLuisFCOM"
 !define PRODUCT_WEB_SITE "www.github.com/GLuisF/GComSerial"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\${PRODUCT_EXE}.exe"

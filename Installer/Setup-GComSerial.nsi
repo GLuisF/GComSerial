@@ -73,7 +73,7 @@ Function .onInit
   !insertmacro MUI_LANGDLL_DISPLAY
 FunctionEnd
 
-Section "SeçãoPrincipal" SEC01
+Section "SeÃ§Ã£oPrincipal" SEC01
   SetOutPath "$INSTDIR"
   SetOverwrite on
   File "GComSerial.exe"
